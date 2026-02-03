@@ -148,7 +148,8 @@ while True:
             print(f"{item} has been added to your order.")
         else:
             print(f"please enter a valid response (yes/no).")
-            if print(f"please enter a valid response (yes/no).")
+            # what is the possible of this code
+            # if print(f"please enter a valid response (yes/no).")
             print(f"Do you want to add {item} to your order? (yes/no): ").strip().lower()
     else:
         print(f"Sorry, {item} is unavailable.")
@@ -162,6 +163,7 @@ if order:
 else:
     print("Your order is empty.")
 
+# Do the following challenges if possible
 # ## Challenge 1: Track Quantities of Items
 # Allow the customer to specify how many of each item they want to buy.​
 # Store both the item and quantity in a nested dictionary.​
