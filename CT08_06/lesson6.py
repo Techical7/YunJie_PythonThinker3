@@ -5,6 +5,7 @@
 # Display all results in an organized format.
 
 #Create a list of students and their answers
+
 students = [
     {"name": "Alice", "answers": ["A", "B", "C", "D"]},
     {"name": "Bob", "answers": ["A", "C", "C", "D"]},
