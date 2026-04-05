@@ -52,4 +52,3 @@ print(find_highest_scorer())
 
 ## Task 5: Build an interactive menu
 # **Build an interactive menu for all the different functions​**
-

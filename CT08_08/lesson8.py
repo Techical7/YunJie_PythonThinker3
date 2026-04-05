@@ -48,3 +48,56 @@
 # - the percentage of vowels ​
 # ​
 # Confirm the file has been created successfully.
+
+def main():
+    input_path = "sherlock.txt"
+    output_path = "vowel_counts.txt"
+    vowels = {"a", "e", "i", "o", "u"}
+    vowel_counts = {v: 0 for v in vowels}
+
+    try:
+        with open(input_path, "r", encoding="utf-8") as file:
+            content = file.read()
+    except FileNotFoundError:
+        print(f"Error: '{input_path}' does not exist.")
+        return
+
+    print("--- File Content ---")
+    print(content)
+    print("--- End of File ---")
+
+    total_chars = len(content)
+    print(f"Total characters: {total_chars}")
+
+    total_vowels = 0
+    for char in content.lower():
+        if char in vowels:
+            vowel_counts[char] += 1
+            total_vowels += 1
+
+    print("Vowel counts:")
+    for vowel in sorted(vowel_counts):
+        print(f"{vowel}: {vowel_counts[vowel]}")
+
+    percentage = (total_vowels / total_chars * 100) if total_chars else 0.0
+    print(f"Total vowels: {total_vowels}")
+    print(f"Vowels as percentage of all characters: {percentage:.2f}%")
+
+    with open(output_path, "w", encoding="utf-8") as output_file:
+        output_file.write("Vowel counts in sherlock.txt\n")
+        output_file.write("-----------------------------\n")
+        for vowel in sorted(vowel_counts):
+            output_file.write(f"{vowel}: {vowel_counts[vowel]}\n")
+        output_file.write(f"\nTotal vowels: {total_vowels}\n")
+        output_file.write(f"Total characters: {total_chars}\n")
+        output_file.write(f"Vowels percentage: {percentage:.2f}%\n")
+
+    print(f"Results written to '{output_path}'.")
+
+
+if __name__ == "__main__":
+    main()
+
+
+## bonus question
+
